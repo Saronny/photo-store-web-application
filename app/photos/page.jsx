@@ -1,11 +1,10 @@
 import PhotoGrid from "../components/PhotoGrid";
 import PhotoUploader from "../components/PhotoUploader";
-import SignOutButton from "../components/SignOutButton";
 import Nav from "../components/Nav";
 
 export default function Photos() {
     return (
-        <main className="min-h-screen bg-gray-100 relative p-10">
+        <main className="min-h-screen bg-gray-500 relative p-20">
             <Nav />
             <div className="container mx-auto px-4 py-4">
                 <div className="flex flex-col items-center mb-6">
@@ -13,9 +12,6 @@ export default function Photos() {
                     <PhotoUploader />
                 </div>
                 <PhotoGrid />
-            </div>
-            <div className="absolute top-4 right-4">
-                <SignOutButton />
             </div>
         </main>
     );

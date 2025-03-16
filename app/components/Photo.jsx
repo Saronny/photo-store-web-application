@@ -18,7 +18,7 @@ function Photo({key, src, alt, width, height, photoName, isFavorited = false}) {
   return (
     <>
       <div
-        className="relative bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300 ease-in-out"
+        className="relative bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300 ease-in-out border-2 border-gray-200"
         style={{ width, height }}
       >
         <form 
