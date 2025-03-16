@@ -1,9 +1,11 @@
 "use client";
 import { useState } from "react";
 import { supabase } from "../utils/supabaseClient";
+import { useRouter } from "next/navigation";
 
 function PhotoUploader() {
   const [uploading, setUploading] = useState(false);
+  const router = useRouter();
 
   async function handleFileUpload(event) {
     try {
@@ -27,7 +29,15 @@ function PhotoUploader() {
             throw error;
         }
 
-        //TODO: Update UI to show the uploaded photo
+        await fetch("/api/revalidate", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ path: '/photos' }),
+        })
+
+        router.refresh();
     } catch (error) {
         alert(error.message);
     } finally {
