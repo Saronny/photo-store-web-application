@@ -49,5 +49,7 @@ export async function deletePhoto(formData) {
     }
 
     revalidatePath("/photos");
+    revalidatePath("/favorites");
+    
     return {success: true};
 }
